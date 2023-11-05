@@ -30,12 +30,12 @@ proxies:
     name: '🚴 GoogleOneVpnSocks'
     type: socks5
     server: 192.168.114.185
-    port: 1083
+    port: 8085
   -
     name: '🚲 GoogleOneVpnHttp'
     type: http
     server: 192.168.114.185
-    port: 8083
+    port: 1083
 
 proxy-groups:
   -
