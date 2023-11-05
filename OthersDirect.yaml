@@ -1,0 +1,12 @@
+payload:
+
+  - DOMAIN-SUFFIX,s.xmcp.ltd
+  - DOMAIN-SUFFIX,komect.com
+  - IP-CIDR,43.156.222.0/24,no-resolve
+  - DOMAIN-SUFFIX,3cfood.com
+  - DOMAIN-SUFFIX,kingfeer.com
+  - DOMAIN-SUFFIX,cctalk.com
+  - DOMAIN-SUFFIX,cctalk.net
+  - DOMAIN-SUFFIX,alidns.com
+  - DOMAIN-SUFFIX,doh.pub
+  - DOMAIN-SUFFIX,95516.com
