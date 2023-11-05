@@ -1,0 +1,13 @@
+payload:
+  # 内容：SteamOverHaul
+  # 数量：18条
+
+  - DOMAIN,steamcommunity.com
+  - DOMAIN,www.steamcommunity.com
+  - DOMAIN,steam-chat.com
+  - DOMAIN,steamcdn-a.akamaihd.net
+  - DOMAIN,cdn.akamai.steamstatic.com
+  - DOMAIN,community.akamai.steamstatic.com
+  - DOMAIN,media.steampowered.com
+  - DOMAIN,store.steampowered.com
+  - DOMAIN,api.steampowered.com
