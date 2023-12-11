@@ -13,7 +13,6 @@ payload:
   - DOMAIN-SUFFIX,nexus-cdn.com
   - DOMAIN-SUFFIX,proton.me
   - DOMAIN-SUFFIX,protonmail.com
-  - DOMAIN-SUFFIX,deepl.com
   - DOMAIN-SUFFIX,whoer.net
   - DOMAIN-SUFFIX,meow.tg
   - DOMAIN-SUFFIX,zaihua.net
@@ -48,15 +47,6 @@ payload:
   - DOMAIN-SUFFIX,cdn77.org
   - DOMAIN-SUFFIX,kxcdn.com
   - DOMAIN-SUFFIX,op.supes.top
-  - DOMAIN-SUFFIX,blobstore.apple.com
-  - DOMAIN-SUFFIX,itsliveradio.apple.com
-  - DOMAIN-SUFFIX,aodp-ssl.apple.com
-  - DOMAIN-SUFFIX,video-ssl.itunes.apple.com
-  - DOMAIN-SUFFIX,mvod.itunes.apple.com
-  - DOMAIN-SUFFIX,hls-amt.itunes.apple.com
-  - DOMAIN-SUFFIX,audio-ssl.itunes.apple.com
-  - DOMAIN-SUFFIX,streamingaudio.itunes.apple.com
-  - DOMAIN-SUFFIX,audio.itunes.apple.com
   - DOMAIN-SUFFIX,yiyo.co
 
 
