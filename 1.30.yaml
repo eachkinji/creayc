@@ -1,0 +1,1090 @@
+mixed-port: 7890
+allow-lan: false
+mode: Rule
+log-level: silent
+external-controller: 127.0.0.1:60000
+# Online订阅1.30更新
+# ONLINE
+# 节点配置文件统一存放在 ./providers/proxy/ 目录中
+proxy-providers:
+  PaoPaoDog-HK:
+    type: http
+    path: ./providers/proxy/PaoPaoDog-HK.yaml
+    url: https://conv.trafficmanager.net/sub?target=clash&url=https%3A%2F%2Fv2.dogapi.yachts%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dd4dd9ecb3048aaa1fc2e33c66228b4ab
+    filter: "香港"
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+    benchmark-url: http://www.gstatic.com/generate_204
+  PaoPaoDog-JP:
+    type: http
+    path: ./providers/proxy/PaoPaoDog-JP.yaml
+    url: https://conv.trafficmanager.net/sub?target=clash&url=https%3A%2F%2Fv2.dogapi.yachts%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dd4dd9ecb3048aaa1fc2e33c66228b4ab
+    filter: "日本"
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+    benchmark-url: http://www.gstatic.com/generate_204
+  PaoPaoDog-TW:
+    type: http
+    path: ./providers/proxy/PaoPaoDog-TW.yaml
+    url: https://conv.trafficmanager.net/sub?target=clash&url=https%3A%2F%2Fv2.dogapi.yachts%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dd4dd9ecb3048aaa1fc2e33c66228b4ab
+    filter: "台湾"
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+    benchmark-url: http://www.gstatic.com/generate_204
+  PaoPaoDog-SG:
+    type: http
+    path: ./providers/proxy/PaoPaoDog-SG.yaml
+    url: https://conv.trafficmanager.net/sub?target=clash&url=https%3A%2F%2Fv2.dogapi.yachts%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dd4dd9ecb3048aaa1fc2e33c66228b4ab
+    filter: "新加坡"
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+    benchmark-url: http://www.gstatic.com/generate_204
+  PaoPaoDog-US:
+    type: http
+    path: ./providers/proxy/PaoPaoDog-US.yaml
+    url: https://conv.trafficmanager.net/sub?target=clash&url=https%3A%2F%2Fv2.dogapi.yachts%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dd4dd9ecb3048aaa1fc2e33c66228b4ab
+    filter: "美国"
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+    benchmark-url: http://www.gstatic.com/generate_204
+  PaoPaoDog-Others:
+    type: http
+    path: ./providers/proxy/PaoPaoDog-Others.yaml
+    url: https://conv.trafficmanager.net/sub?target=clash&url=https%3A%2F%2Fv2.dogapi.yachts%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dd4dd9ecb3048aaa1fc2e33c66228b4ab
+    interval: 86400
+    filter: "埃及|英国|爱尔兰|迪拜|韩国|南非|印度|德国|巴西|法国|墨西哥|阿根廷|土耳其|俄罗斯|乌克兰|美国家宽"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+    benchmark-url: http://www.gstatic.com/generate_204
+  PaoPaoDog:
+    type: http
+    path: ./providers/proxy/PaoPaoDog.yaml
+    url: https://conv.trafficmanager.net/sub?target=clash&url=https%3A%2F%2Fv2.dogapi.yachts%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dd4dd9ecb3048aaa1fc2e33c66228b4ab
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+    benchmark-url: http://www.gstatic.com/generate_204
+  GoogleOneVpn:
+    type: http
+    path: ./providers/proxy/GoogleOneVpn.yaml
+    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/GoogleOneVpn.yaml"
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+proxy-groups:
+  - name: "🔰 节点选择"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - ♻️ 自动选择
+      - "🚲 GoogleOneVpn"
+      - 🤖 可用自选
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🎯 全球直连"
+      - "🛑 全球拦截"
+  - name: ♻️ 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+  - name: "🐟 漏网之鱼"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - "🎯 全球直连"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "🤖 可用自选"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🚲 GoogleOneVpn"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇺🇸 美国"
+  - name: "🚲 GoogleOneVpn"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    use:
+      - GoogleOneVpn
+  - name: "🎈 GoogleOneVpnIP检查"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - 🤖 可用自选
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🎯 全球直连"
+      - "🛑 全球拦截"
+  - name: "😭 GoogleOneVpnIP地址"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - 🤖 可用自选
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "😡 操你妈的定位追踪"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🎯 全球直连"
+      - "🛑 全球拦截"
+  - name: "🍎 苹果服务"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "🏃 泡泡狗"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    use:
+      - PaoPaoDog
+  - name: "⬇️ 下载"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "🤔 选择性链接"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🎯 全球直连"
+      - "🛑 全球拦截"
+  - name: "📡 自定义代理链接"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🎯 全球直连"
+      - "🛑 全球拦截"
+  - name: "🚥 自定义直连链接"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "🚨 自定义拒绝链接"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🛑 全球拦截"
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+  - name: "🧱 全球代理"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🎯 全球直连"
+      - "🛑 全球拦截"
+  - name: "🌍 国外媒体"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🎯 全球直连"
+      - "🛑 全球拦截"
+  - name: "🤐 国内媒体"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "💩 国内网络"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "🤓 国内外学术"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "💰 PayPal"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🎯 全球直连"
+      - "🛑 全球拦截"
+  - name: "🎵 Spotify"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "📲 电报信息"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🎯 全球直连"
+      - "🛑 全球拦截"
+  - name: "🔦 Google"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🎯 全球直连"
+      - "🛑 全球拦截"
+  - name: "📢 GoogleFCM"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🎯 全球直连"
+      - "🛑 全球拦截"
+  - name: "🐲 GoogleCN代理"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🎯 全球直连"
+      - "🛑 全球拦截"
+  - name: "🪂 GoogleCN"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: 👊 Copilot
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - "🎯 全球直连"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🎯 全球直连"
+      - "🛑 全球拦截"
+  - name: ☁️ OneDrive
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: Ⓜ️ 微软服务
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "🎥 Netflix"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🎯 全球直连"
+      - "🛑 全球拦截"
+  - name: "🎞️ Youtube"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🎯 全球直连"
+      - "🛑 全球拦截"
+  - name: "📺 巴哈姆特"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🇹🇼 台湾"
+      - "🔰 节点选择"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "🐉 张小龙的🐎"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "🏊 bilibili港澳台"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "🅱️ bilibili"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "🦄 Steam代理"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🔰 节点选择"
+      - "🎯 全球直连"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "🔫 SteamCN"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "🎉 Steam"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🎯 全球直连"
+      - "🔰 节点选择"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "🤖 OpenAi"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - "🇺🇸 美国"
+      - "🔰 节点选择"
+      - "🚲 GoogleOneVpn"
+      - "🎯 全球直连"
+      - ♻️ 自动选择
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇹🇼 台湾"
+      - "🇸🇬 新加坡"
+      - "🌐 全球"
+      - "🏃 泡泡狗"
+      - "🛑 全球拦截"
+  - name: "🛑 全球拦截"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - REJECT
+      - "🎯 全球直连"
+  - name: "🎯 全球直连"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    proxies:
+      - DIRECT
+  - name: "🇭🇰 香港"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    use:
+      - PaoPaoDog-HK
+  - name: "🇯🇵 日本"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    use:
+      - PaoPaoDog-JP
+  - name: "🇹🇼 台湾"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    use:
+      - PaoPaoDog-TW
+  - name: "🇸🇬 新加坡"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    use:
+      - PaoPaoDog-SG
+  - name: "🇺🇸 美国"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    use:
+      - PaoPaoDog-US
+  - name: "🌐 全球"
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 3600
+    use:
+      - PaoPaoDog-Others
+rule-providers:
+  Anti-AD:
+    type: http
+    behavior: domain
+    url: "https://anti-ad.net/clash.yaml"
+    path: ./providers/rule/Anti-AD.yaml
+    interval: 86400
+  BanAD:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml"
+    path: ./providers/rule/BanAD.yaml
+    interval: 86400
+  BanEasyList:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyList.yaml"
+    path: ./providers/rule/BanEasyList.yaml
+    interval: 86400
+  BanEasyListChina:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyListChina.yaml"
+    path: ./providers/rule/BanEasyListChina.yaml
+    interval: 86400
+  BanEasyPrivacy:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyPrivacy.yaml"
+    path: ./providers/rule/BanEasyPrivacy.yaml
+    interval: 86400
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanProgramAD.yaml"
+    path: ./providers/rule/BanProgramAD.yaml
+    interval: 86400
+  FuckLocationTrack:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/lwd-temp/anti-ip-attribution/main/generated/rule-provider.yaml"
+    path: ./providers/rule/FuckLocationTrack.yaml
+    interval: 86400
+  Scholar:
+    behavior: classical
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Scholar.yaml"
+    interval: 86400
+    path: ./providers/rule/Scholar.yaml
+  Apple:
+    behavior: classical
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Apple.yaml"
+    interval: 86400
+    path: ./providers/rule/Apple.yaml
+  Google:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml"
+    path: ./providers/rule/Google.yaml
+    interval: 86400
+  GoogleCN:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCN.yaml"
+    path: ./providers/rule/GoogleCN.yaml
+    interval: 86400
+  GoogleCNProxy:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCNProxyIP.yaml"
+    path: ./providers/rule/GoogleCNProxy.yaml
+    interval: 86400
+  GoogleFCM:
+    behavior: classical
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleFCM.yaml"
+    interval: 86400
+    path: ./providers/rule/GoogleFCM.yaml
+  OneDrive:
+    behavior: classical
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OneDrive.yaml"
+    interval: 86400
+    path: ./providers/rule/OneDrive.yaml
+  Microsoft:
+    behavior: classical
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml"
+    interval: 86400
+    path: ./providers/rule/Microsoft.yaml
+  Copilot:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml"
+    path: ./providers/rule/Copilot.yaml
+    interval: 86400
+  ProxyGFWlist:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml"
+    path: ./providers/rule/ProxyGFWlist.yaml
+    interval: 86400
+  Telegram:
+    behavior: classical
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml"
+    interval: 86400
+    path: ./providers/rule/Telegram.yaml
+  SteamCN:
+    behavior: classical
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/SteamCN.yaml"
+    interval: 86400
+    path: ./providers/rule/SteamCN.yaml
+  Steam:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Steam.yaml"
+    path: ./providers/rule/Steam.yaml
+    interval: 86400
+  SteamOverHaul:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/SteamOverHaul.yaml"
+    path: ./providers/rule/SteamOverHaul.yaml
+    interval: 86400
+  ProxyMedia:
+    behavior: classical
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml"
+    interval: 86400
+    path: ./providers/rule/ProxyMedia.yaml
+  ChinaMedia:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaMedia.yaml"
+    path: ./providers/rule/ChinaMedia.yaml
+    interval: 86400
+  ChinaDomain:
+    behavior: classical
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml"
+    interval: 86400
+    path: ./providers/rule/ChinaDomain.yaml
+  ChinaCompanyIp:
+    behavior: ipcidr
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml"
+    interval: 86400
+    path: ./providers/rule/ChinaCompanyIp.yaml
+  ChinaIp:
+    type: http
+    behavior: ipcidr
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaIp.yaml"
+    path: ./providers/rule/ChinaIp.yaml
+    interval: 86400
+  ChinaIpV6:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaIpV6.yaml"
+    path: ./providers/rule/ChinaIpV6.yaml
+    interval: 86400
+  ChinaNet:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/ChinaNet.yaml"
+    path: ./providers/rule/ChinaNet.yaml
+    interval: 86400
+  ChinaDNS:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/ChinaDNS.yaml"
+    path: ./providers/rule/ChinaDNS.yaml
+    interval: 86400
+  Download:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Download.yaml"
+    path: ./providers/rule/Download.yaml
+    interval: 86400
+  GameDownload:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GameDownload.yaml"
+    path: ./providers/rule/GameDownload.yaml
+    interval: 86400
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml"
+    path: ./providers/rule/LocalAreaNetwork.yaml
+    interval: 86400
+  Netflix:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml"
+    path: ./providers/rule/Netflix.yaml
+    interval: 86400
+  Youtube:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml"
+    path: ./providers/rule/Youtube.yaml
+    interval: 86400
+  Bahamut:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bahamut.yaml"
+    path: ./providers/rule/Bahamut.yaml
+    interval: 86400
+  PayPal:
+    type: http
+    behavior: classical
+    url:  “https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/PayPal.yaml”
+    path: ./providers/rule/PayPal.yaml
+    interval: 86400
+  Wechat:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Wechat.yaml"
+    path: ./providers/rule/Wechat.yaml
+    interval: 86400
+  Bilibili:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bilibili.yaml"
+    path: ./providers/rule/Bilibili.yaml
+    interval: 86400
+  BilibiliHMT:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/BilibiliHMT.yaml"
+    path: ./providers/rule/BilibiliHMT.yaml
+    interval: 86400
+  OpenAi:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OpenAi.yaml"
+    path: ./providers/rule/OpenAi.yaml
+    interval: 86400
+  Spotify:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml"
+    path: ./providers/rule/Spotify.yaml
+    interval: 86400
+  UnBan:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml"
+    path: ./providers/rule/UnBan.yaml
+    interval: 86400
+  ProxyLite:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyLite.yaml"
+    path: ./providers/rule/ProxyLite.yaml
+    interval: 86400
+  OthersProxies:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/OthersProxies.yaml"
+    path: ./providers/rule/OthersProxies.yaml
+    interval: 86400
+  OthersDirect:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/OthersDirect.yaml"
+    path: ./providers/rule/OthersDirect.yaml
+    interval: 86400
+  OthersReject:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/OthersReject.yaml"
+    path: ./providers/rule/OthersReject.yaml
+    interval: 86400
+  GoogleOneVpnIPCheck:
+    behavior: classical
+    type: http
+    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/GoogleOneVpnIPCheck.yaml"
+    interval: 86400
+    path: ./providers/rule/GoogleOneVpnIPCheck.yaml
+  GoogleOneVpnIP:
+    behavior: classical
+    type: http
+    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/GoogleOneVpnIP.yaml"
+    interval: 86400
+    path: ./providers/rule/GoogleOneVpnIP.yaml
+rules:
+  - "RULE-SET,LocalAreaNetwork,🎯 全球直连"
+  - DOMAIN,clash.razord.top,DIRECT
+  - DOMAIN,yacd.haishan.me,DIRECT
+  - "RULE-SET,FuckLocationTrack,😡 操你妈的定位追踪,no-resolve"
+  - "RULE-SET,UnBan,🤔 选择性链接"
+  - "RULE-SET,OthersReject,🚨 自定义拒绝链接"
+  - "RULE-SET,OthersProxies,📡 自定义代理链接"
+  - "RULE-SET,OthersDirect,🚥 自定义直连链接"
+  - "RULE-SET,GoogleOneVpnIP,😭 GoogleOneVpnIP地址"
+  - "RULE-SET,GoogleOneVpnIPCheck,🎈 GoogleOneVpnIP检查"
+  - "RULE-SET,Anti-AD,🛑 全球拦截"
+  - "RULE-SET,BanAD,🛑 全球拦截"
+  - "RULE-SET,BanEasyList,🛑 全球拦截"
+  - "RULE-SET,BanEasyListChina,🛑 全球拦截"
+  - "RULE-SET,BanEasyPrivacy,🛑 全球拦截"
+  - "RULE-SET,BanProgramAD,🛑 全球拦截"
+  - "RULE-SET,Download,⬇️ 下载"
+  - "RULE-SET,GameDownload,⬇️ 下载"
+  - "RULE-SET,OpenAi,🤖 OpenAi"
+  - "RULE-SET,Scholar,🤓 国内外学术"
+  - "RULE-SET,PayPal,💰 PayPal"
+  - "RULE-SET,Bahamut,📺 巴哈姆特"
+  - "RULE-SET,Spotify,🎵 Spotify"
+  - "RULE-SET,Netflix,🎥 Netflix"
+  - "RULE-SET,Youtube,🎞️ Youtube"
+  - "RULE-SET,Google,🔦 Google"
+  - "RULE-SET,GoogleFCM,📢 GoogleFCM"
+  - "RULE-SET,GoogleCNProxy,🐲 GoogleCN代理"
+  - "RULE-SET,GoogleCN,🪂 GoogleCN"
+  - "RULE-SET,Telegram,📲 电报信息"
+  - "RULE-SET,SteamOverHaul,🦄 Steam代理"
+  - "RULE-SET,SteamCN,🔫 SteamCN"
+  - "RULE-SET,Steam,🎉 Steam"
+  - "RULE-SET,Copilot,👊 Copilot" 
+  - "RULE-SET,OneDrive,☁️ OneDrive"
+  - "RULE-SET,Microsoft,Ⓜ️ 微软服务"
+  - "RULE-SET,Apple,🍎 苹果服务"
+  - "RULE-SET,Wechat,🐉 张小龙的🐎"
+  - "RULE-SET,BilibiliHMT,🏊 bilibili港澳台"
+  - "RULE-SET,Bilibili,🅱️ bilibili"
+  - "RULE-SET,ProxyMedia,🌍 国外媒体"
+  - "RULE-SET,ProxyGFWlist,🧱 全球代理"
+  - "RULE-SET,ProxyLite,🧱 全球代理"
+  - "RULE-SET,ChinaMedia,🤐 国内媒体"
+  - "RULE-SET,ChinaNet,💩 国内网络"
+  - "RULE-SET,ChinaDNS,💩 国内网络"
+  - "RULE-SET,ChinaDomain,💩 国内网络"
+  - "RULE-SET,ChinaCompanyIp,💩 国内网络,no-resolve"
+  - "RULE-SET,ChinaIp,💩 国内网络,no-resolve"
+  - "RULE-SET,ChinaIpV6,💩 国内网络,no-resolve"
+  - "MATCH,🐟 漏网之鱼"
