@@ -1037,6 +1037,8 @@ rule-providers:
     interval: 86400
     path: ./providers/rule/GoogleOneVpnIP.yaml
 rules:
+  - "RULE-SET,GoogleOneVpnIP,😭 GoogleOneVpnIP地址"
+  - "RULE-SET,GoogleOneVpnIPCheck,🎈 GoogleOneVpnIP检查"
   - "RULE-SET,LocalAreaNetwork,🎯 全球直连"
   - DOMAIN,clash.razord.top,DIRECT
   - DOMAIN,yacd.haishan.me,DIRECT
@@ -1045,8 +1047,6 @@ rules:
   - "RULE-SET,OthersReject,🚨 自定义拒绝链接"
   - "RULE-SET,OthersProxies,📡 自定义代理链接"
   - "RULE-SET,OthersDirect,🚥 自定义直连链接"
-  - "RULE-SET,GoogleOneVpnIP,😭 GoogleOneVpnIP地址"
-  - "RULE-SET,GoogleOneVpnIPCheck,🎈 GoogleOneVpnIP检查"
   - "RULE-SET,Anti-AD,🛑 全球拦截"
   - "RULE-SET,BanAD,🛑 全球拦截"
   - "RULE-SET,BanEasyList,🛑 全球拦截"
