@@ -1,8 +1,6 @@
 payload:
 #GoogleOneVpnIPCheck
   - DOMAIN-SUFFIX,cupronickel.goog
-  - DOMAIN-SUFFIX,phosphor-pa.googleapis.com
-  - DOMAIN-SUFFIX,scone-pa.googleapis.com
-  - DOMAIN-SUFFIX,beryllium-pa.googleapis.com
+  - DOMAIN-SUFFIX,googleapis.com
   - DOMAIN-SUFFIX,connectivitycheck.gstatic.com
  
