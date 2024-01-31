@@ -3,4 +3,4 @@ payload:
   - DOMAIN-SUFFIX,cupronickel.goog
   - DOMAIN-SUFFIX,googleapis.com
   - DOMAIN-SUFFIX,connectivitycheck.gstatic.com
- 
+  - DOMAIN-SUFFIX,g-tun.com
