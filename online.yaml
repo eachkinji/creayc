@@ -10,7 +10,7 @@ proxy-providers:
   PaoPaoDog-HK:
     type: http
     path: ./providers/proxy/PaoPaoDog-HK.yaml
-    url: https://conv.trafficmanager.net/sub?target=clash&url=https%3A%2F%2Fv2.dogapi.yachts%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dd4dd9ecb3048aaa1fc2e33c66228b4ab
+    url: https://c558ea3f-f85c-4e15-b366-ab8ad9437fab.ppgnginx.com/api/v1/client/subscribe?token=014a610765c216694076b93b4c23c713
     filter: "香港"
     interval: 86400
     health-check:
@@ -21,7 +21,7 @@ proxy-providers:
   PaoPaoDog-JP:
     type: http
     path: ./providers/proxy/PaoPaoDog-JP.yaml
-    url: https://conv.trafficmanager.net/sub?target=clash&url=https%3A%2F%2Fv2.dogapi.yachts%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dd4dd9ecb3048aaa1fc2e33c66228b4ab
+    url: https://c558ea3f-f85c-4e15-b366-ab8ad9437fab.ppgnginx.com/api/v1/client/subscribe?token=014a610765c216694076b93b4c23c713
     filter: "日本"
     interval: 86400
     health-check:
@@ -32,7 +32,7 @@ proxy-providers:
   PaoPaoDog-TW:
     type: http
     path: ./providers/proxy/PaoPaoDog-TW.yaml
-    url: https://conv.trafficmanager.net/sub?target=clash&url=https%3A%2F%2Fv2.dogapi.yachts%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dd4dd9ecb3048aaa1fc2e33c66228b4ab
+    url: https://c558ea3f-f85c-4e15-b366-ab8ad9437fab.ppgnginx.com/api/v1/client/subscribe?token=014a610765c216694076b93b4c23c713
     filter: "台湾"
     interval: 86400
     health-check:
@@ -43,7 +43,7 @@ proxy-providers:
   PaoPaoDog-SG:
     type: http
     path: ./providers/proxy/PaoPaoDog-SG.yaml
-    url: https://conv.trafficmanager.net/sub?target=clash&url=https%3A%2F%2Fv2.dogapi.yachts%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dd4dd9ecb3048aaa1fc2e33c66228b4ab
+    url: https://c558ea3f-f85c-4e15-b366-ab8ad9437fab.ppgnginx.com/api/v1/client/subscribe?token=014a610765c216694076b93b4c23c713
     filter: "新加坡"
     interval: 86400
     health-check:
@@ -54,7 +54,7 @@ proxy-providers:
   PaoPaoDog-US:
     type: http
     path: ./providers/proxy/PaoPaoDog-US.yaml
-    url: https://conv.trafficmanager.net/sub?target=clash&url=https%3A%2F%2Fv2.dogapi.yachts%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dd4dd9ecb3048aaa1fc2e33c66228b4ab
+    url: https://c558ea3f-f85c-4e15-b366-ab8ad9437fab.ppgnginx.com/api/v1/client/subscribe?token=014a610765c216694076b93b4c23c713
     filter: "美国"
     interval: 86400
     health-check:
@@ -65,7 +65,7 @@ proxy-providers:
   PaoPaoDog-Others:
     type: http
     path: ./providers/proxy/PaoPaoDog-Others.yaml
-    url: https://conv.trafficmanager.net/sub?target=clash&url=https%3A%2F%2Fv2.dogapi.yachts%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dd4dd9ecb3048aaa1fc2e33c66228b4ab
+    url: https://c558ea3f-f85c-4e15-b366-ab8ad9437fab.ppgnginx.com/api/v1/client/subscribe?token=014a610765c216694076b93b4c23c713
     interval: 86400
     filter: "埃及|英国|爱尔兰|迪拜|韩国|南非|印度|德国|巴西|法国|墨西哥|阿根廷|土耳其|俄罗斯|乌克兰|美国家宽"
     health-check:
@@ -76,7 +76,7 @@ proxy-providers:
   PaoPaoDog:
     type: http
     path: ./providers/proxy/PaoPaoDog.yaml
-    url: https://conv.trafficmanager.net/sub?target=clash&url=https%3A%2F%2Fv2.dogapi.yachts%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dd4dd9ecb3048aaa1fc2e33c66228b4ab
+    url: https://c558ea3f-f85c-4e15-b366-ab8ad9437fab.ppgnginx.com/api/v1/client/subscribe?token=014a610765c216694076b93b4c23c713
     interval: 86400
     health-check:
       enable: true
