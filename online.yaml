@@ -7,10 +7,10 @@ external-controller: 127.0.0.1:60000
 # ONLINE
 # 节点配置文件统一存放在 ./providers/proxy/ 目录中
 proxy-providers:
-  PaoPaoDog-HK:
+  Paoluz-HK:
     type: http
-    path: ./providers/proxy/PaoPaoDog-HK.yaml
-    url: https://c558ea3f-f85c-4e15-b366-ab8ad9437fab.ppgnginx.com/api/v1/client/subscribe?token=014a610765c216694076b93b4c23c713
+    path: ./providers/proxy/Paoluz-HK.yaml
+    url: https://app.nloli.xyz/sub?target=clash&udp=true&config=https%3A%2F%2Fapp.nloli.xyz%2Fstatic%2FACL4SSR_Online.ini&exclude=GAME&emoji=true&filename=Paoluz_Cat4SSR&new_name=true&url=https://rss.paoluz.xyz/link/x4BMtUtvLRGT50iG?sub=1
     filter: "香港"
     interval: 86400
     health-check:
@@ -18,21 +18,21 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 300
     benchmark-url: http://www.gstatic.com/generate_204
-  PaoPaoDog-JP:
+  Paoluz-JP:
     type: http
-    path: ./providers/proxy/PaoPaoDog-JP.yaml
-    url: https://c558ea3f-f85c-4e15-b366-ab8ad9437fab.ppgnginx.com/api/v1/client/subscribe?token=014a610765c216694076b93b4c23c713
-    filter: "日本"
+    path: ./providers/proxy/Paoluz-JP.yaml
+    url: https://app.nloli.xyz/sub?target=clash&udp=true&config=https%3A%2F%2Fapp.nloli.xyz%2Fstatic%2FACL4SSR_Online.ini&exclude=GAME&emoji=true&filename=Paoluz_Cat4SSR&new_name=true&url=https://rss.paoluz.xyz/link/x4BMtUtvLRGT50iG?sub=1
+    filter: "D20｜D21｜D22｜D23｜D24"
     interval: 86400
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
     benchmark-url: http://www.gstatic.com/generate_204
-  PaoPaoDog-TW:
+  Paoluz-TW:
     type: http
-    path: ./providers/proxy/PaoPaoDog-TW.yaml
-    url: https://c558ea3f-f85c-4e15-b366-ab8ad9437fab.ppgnginx.com/api/v1/client/subscribe?token=014a610765c216694076b93b4c23c713
+    path: ./providers/proxy/Paoluz-TW.yaml
+    url: https://app.nloli.xyz/sub?target=clash&udp=true&config=https%3A%2F%2Fapp.nloli.xyz%2Fstatic%2FACL4SSR_Online.ini&exclude=GAME&emoji=true&filename=Paoluz_Cat4SSR&new_name=true&url=https://rss.paoluz.xyz/link/x4BMtUtvLRGT50iG?sub=1
     filter: "台湾"
     interval: 86400
     health-check:
@@ -40,10 +40,10 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 300
     benchmark-url: http://www.gstatic.com/generate_204
-  PaoPaoDog-SG:
+  Paoluz-SG:
     type: http
-    path: ./providers/proxy/PaoPaoDog-SG.yaml
-    url: https://c558ea3f-f85c-4e15-b366-ab8ad9437fab.ppgnginx.com/api/v1/client/subscribe?token=014a610765c216694076b93b4c23c713
+    path: ./providers/proxy/Paoluz-SG.yaml
+    url: https://app.nloli.xyz/sub?target=clash&udp=true&config=https%3A%2F%2Fapp.nloli.xyz%2Fstatic%2FACL4SSR_Online.ini&exclude=GAME&emoji=true&filename=Paoluz_Cat4SSR&new_name=true&url=https://rss.paoluz.xyz/link/x4BMtUtvLRGT50iG?sub=1
     filter: "新加坡"
     interval: 86400
     health-check:
@@ -51,10 +51,10 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 300
     benchmark-url: http://www.gstatic.com/generate_204
-  PaoPaoDog-US:
+  Paoluz-US:
     type: http
-    path: ./providers/proxy/PaoPaoDog-US.yaml
-    url: https://c558ea3f-f85c-4e15-b366-ab8ad9437fab.ppgnginx.com/api/v1/client/subscribe?token=014a610765c216694076b93b4c23c713
+    path: ./providers/proxy/Paoluz-US.yaml
+    url: https://app.nloli.xyz/sub?target=clash&udp=true&config=https%3A%2F%2Fapp.nloli.xyz%2Fstatic%2FACL4SSR_Online.ini&exclude=GAME&emoji=true&filename=Paoluz_Cat4SSR&new_name=true&url=https://rss.paoluz.xyz/link/x4BMtUtvLRGT50iG?sub=1
     filter: "美国"
     interval: 86400
     health-check:
@@ -62,21 +62,21 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 300
     benchmark-url: http://www.gstatic.com/generate_204
-  PaoPaoDog-Others:
+  Paoluz-Others:
     type: http
-    path: ./providers/proxy/PaoPaoDog-Others.yaml
-    url: https://c558ea3f-f85c-4e15-b366-ab8ad9437fab.ppgnginx.com/api/v1/client/subscribe?token=014a610765c216694076b93b4c23c713
+    path: ./providers/proxy/Paoluz-Others.yaml
+    url: https://app.nloli.xyz/sub?target=clash&udp=true&config=https%3A%2F%2Fapp.nloli.xyz%2Fstatic%2FACL4SSR_Online.ini&exclude=GAME&emoji=true&filename=Paoluz_Cat4SSR&new_name=true&url=https://rss.paoluz.xyz/link/x4BMtUtvLRGT50iG?sub=1
     interval: 86400
-    filter: "埃及|英国|爱尔兰|迪拜|韩国|南非|印度|德国|巴西|法国|墨西哥|阿根廷|土耳其|俄罗斯|乌克兰|美国家宽"
+    filter: "H60｜越南｜马来西亚｜韩国｜D27"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
     benchmark-url: http://www.gstatic.com/generate_204
-  PaoPaoDog:
+  Paoluz:
     type: http
-    path: ./providers/proxy/PaoPaoDog.yaml
-    url: https://c558ea3f-f85c-4e15-b366-ab8ad9437fab.ppgnginx.com/api/v1/client/subscribe?token=014a610765c216694076b93b4c23c713
+    path: ./providers/proxy/Paoluz.yaml
+    url: https://app.nloli.xyz/sub?target=clash&udp=true&config=https%3A%2F%2Fapp.nloli.xyz%2Fstatic%2FACL4SSR_Online.ini&exclude=GAME&emoji=true&filename=Paoluz_Cat4SSR&new_name=true&url=https://rss.paoluz.xyz/link/x4BMtUtvLRGT50iG?sub=1
     interval: 86400
     health-check:
       enable: true
@@ -107,7 +107,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🎯 全球直连"
       - "🛑 全球拦截"
   - name: ♻️ 自动选择
@@ -134,7 +134,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "🤖 可用自选"
     type: url-test
@@ -165,7 +165,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🎯 全球直连"
       - "🛑 全球拦截"
   - name: "😭 GoogleOneVpnIP地址"
@@ -183,7 +183,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "😡 操你妈的定位追踪"
     type: select
@@ -198,7 +198,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🎯 全球直连"
       - "🛑 全球拦截"
   - name: "🍎 苹果服务"
@@ -215,14 +215,14 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
-  - name: "🏃 泡泡狗"
+  - name: "🏃 跑路云"
     type: select
     url: http://www.gstatic.com/generate_204
     interval: 3600
     use:
-      - PaoPaoDog
+      - Paoluz
   - name: "⬇️ 下载"
     type: select
     url: http://www.gstatic.com/generate_204
@@ -237,7 +237,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "🤔 选择性链接"
     type: select
@@ -252,7 +252,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🎯 全球直连"
       - "🛑 全球拦截"
   - name: "📡 自定义代理链接"
@@ -268,7 +268,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🎯 全球直连"
       - "🛑 全球拦截"
   - name: "🚥 自定义直连链接"
@@ -285,7 +285,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "🚨 自定义拒绝链接"
     type: select
@@ -302,7 +302,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
   - name: "🧱 全球代理"
     type: select
     url: http://www.gstatic.com/generate_204
@@ -316,7 +316,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🎯 全球直连"
       - "🛑 全球拦截"
   - name: "🌍 国外媒体"
@@ -332,7 +332,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🎯 全球直连"
       - "🛑 全球拦截"
   - name: "🤐 国内媒体"
@@ -349,7 +349,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "💩 国内网络"
     type: select
@@ -365,7 +365,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "🤓 国内外学术"
     type: select
@@ -381,7 +381,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "💰 PayPal"
     type: select
@@ -396,7 +396,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🎯 全球直连"
       - "🛑 全球拦截"
   - name: "🎵 Spotify"
@@ -413,7 +413,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "📲 电报信息"
     type: select
@@ -428,7 +428,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🎯 全球直连"
       - "🛑 全球拦截"
   - name: "🔦 Google"
@@ -444,7 +444,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🎯 全球直连"
       - "🛑 全球拦截"
   - name: "📢 GoogleFCM"
@@ -460,7 +460,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🎯 全球直连"
       - "🛑 全球拦截"
   - name: "🐲 GoogleCN代理"
@@ -476,7 +476,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🎯 全球直连"
       - "🛑 全球拦截"
   - name: "🪂 GoogleCN"
@@ -493,7 +493,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: 👊 Copilot
     type: select
@@ -509,7 +509,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🎯 全球直连"
       - "🛑 全球拦截"
   - name: ☁️ OneDrive
@@ -526,7 +526,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: Ⓜ️ 微软服务
     type: select
@@ -542,7 +542,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "🎥 Netflix"
     type: select
@@ -557,7 +557,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🎯 全球直连"
       - "🛑 全球拦截"
   - name: "🎞️ Youtube"
@@ -573,7 +573,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🎯 全球直连"
       - "🛑 全球拦截"
   - name: "📺 巴哈姆特"
@@ -583,7 +583,7 @@ proxy-groups:
     proxies:
       - "🇹🇼 台湾"
       - "🔰 节点选择"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "🐉 张小龙的🐎"
     type: select
@@ -599,7 +599,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "🏊 bilibili港澳台"
     type: select
@@ -615,7 +615,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "🅱️ bilibili"
     type: select
@@ -631,7 +631,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "🦄 Steam代理"
     type: select
@@ -647,7 +647,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "🔫 SteamCN"
     type: select
@@ -663,7 +663,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "🎉 Steam"
     type: select
@@ -679,7 +679,7 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "🤖 OpenAi"
     type: select
@@ -696,7 +696,7 @@ proxy-groups:
       - "🇹🇼 台湾"
       - "🇸🇬 新加坡"
       - "🌐 全球"
-      - "🏃 泡泡狗"
+      - "🏃 跑路云"
       - "🛑 全球拦截"
   - name: "🛑 全球拦截"
     type: select
@@ -716,37 +716,37 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 3600
     use:
-      - PaoPaoDog-HK
+      - Paoluz-HK
   - name: "🇯🇵 日本"
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 3600
     use:
-      - PaoPaoDog-JP
+      - Paoluz-JP
   - name: "🇹🇼 台湾"
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 3600
     use:
-      - PaoPaoDog-TW
+      - Paoluz-TW
   - name: "🇸🇬 新加坡"
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 3600
     use:
-      - PaoPaoDog-SG
+      - Paoluz-SG
   - name: "🇺🇸 美国"
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 3600
     use:
-      - PaoPaoDog-US
+      - Paoluz-US
   - name: "🌐 全球"
     type: select
     url: http://www.gstatic.com/generate_204
     interval: 3600
     use:
-      - PaoPaoDog-Others
+      - Paoluz-Others
 rule-providers:
   Anti-AD:
     type: http
