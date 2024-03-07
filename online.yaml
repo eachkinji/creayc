@@ -22,7 +22,7 @@ proxy-providers:
     type: http
     path: ./providers/proxy/Paoluz-JP.yaml
     url: https://app.nloli.xyz/sub?target=clash&udp=true&config=https%3A%2F%2Fapp.nloli.xyz%2Fstatic%2FACL4SSR_Online.ini&exclude=GAME&emoji=true&filename=Paoluz_Cat4SSR&new_name=true&url=https://rss.paoluz.xyz/link/x4BMtUtvLRGT50iG?sub=1
-    filter: "D20｜D21｜D22｜D23｜D24"
+    filter: "D20|D21|D22|D23|D24"
     interval: 86400
     health-check:
       enable: true
@@ -67,7 +67,7 @@ proxy-providers:
     path: ./providers/proxy/Paoluz-Others.yaml
     url: https://app.nloli.xyz/sub?target=clash&udp=true&config=https%3A%2F%2Fapp.nloli.xyz%2Fstatic%2FACL4SSR_Online.ini&exclude=GAME&emoji=true&filename=Paoluz_Cat4SSR&new_name=true&url=https://rss.paoluz.xyz/link/x4BMtUtvLRGT50iG?sub=1
     interval: 86400
-    filter: "H60｜越南｜马来西亚｜韩国｜D27"
+    filter: "H60|越南|马来西亚|韩国|D27"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
