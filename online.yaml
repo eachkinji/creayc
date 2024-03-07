@@ -871,7 +871,7 @@ rule-providers:
   SteamOverHaul:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/SteamOverHaul.yaml"
+    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/SteamOverHaul.yaml?token=GHSAT0AAAAAACNFJ264EMJG7MOYLSZVUKP4ZPJIAMA"
     path: ./providers/rule/SteamOverHaul.yaml
     interval: 86400
   ProxyMedia:
@@ -1009,31 +1009,31 @@ rule-providers:
   OthersProxies:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/OthersProxies.yaml"
+    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/OthersProxies.yaml?token=GHSAT0AAAAAACNFJ265SGAZ73LYJJWEN6F2ZPJICFA"
     path: ./providers/rule/OthersProxies.yaml
     interval: 86400
   OthersDirect:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/OthersDirect.yaml"
+    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/OthersDirect.yaml?token=GHSAT0AAAAAACNFJ265EJR3GD3G2BG2ZZ2MZPJIBVQ"
     path: ./providers/rule/OthersDirect.yaml
     interval: 86400
   OthersReject:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/OthersReject.yaml"
+    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/OthersReject.yaml?token=GHSAT0AAAAAACNFJ265WRWUBCZFHFYR3D3KZPJICNA"
     path: ./providers/rule/OthersReject.yaml
     interval: 86400
   GoogleOneVpnIPCheck:
     behavior: classical
     type: http
-    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/GoogleOneVpnIPCheck.yaml"
+    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/GoogleOneVpnIPCheck.yaml?token=GHSAT0AAAAAACNFJ264NX33V6K7RZS2LHLMZPJIBMA"
     interval: 86400
     path: ./providers/rule/GoogleOneVpnIPCheck.yaml
   GoogleOneVpnIP:
     behavior: classical
     type: http
-    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/GoogleOneVpnIP.yaml"
+    url: "https://raw.githubusercontent.com/eachkinji/creayc/main/GoogleOneVpnIP.yaml?token=GHSAT0AAAAAACNFJ264F7PSISOVMPETLUNIZPJIBEA"
     interval: 86400
     path: ./providers/rule/GoogleOneVpnIP.yaml
 rules:
