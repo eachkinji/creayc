@@ -3,7 +3,7 @@ allow-lan: false
 mode: Rule
 log-level: silent
 external-controller: 127.0.0.1:60000
-# Online订阅1.30更新
+# Online订阅3.7更新
 # ONLINE
 # 节点配置文件统一存放在 ./providers/proxy/ 目录中
 proxy-providers:
