@@ -12,3 +12,4 @@ payload:
   - DOMAIN,store.steampowered.com
   - DOMAIN,api.steampowered.com
   - DOMAIN,steamstatic.com
+  - DOMAIN,steamserver.net
