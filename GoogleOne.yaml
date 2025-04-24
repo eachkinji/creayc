@@ -12,7 +12,7 @@ proxies:
     port: 8080
 
       -
-    name: '🚉 GoogleOneVpnHttpS'
+    name: '🚉 GoogleOneVpnSocksS'
     type: http
     server: 192.168.1.110
     port: 8080
