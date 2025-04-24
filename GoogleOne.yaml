@@ -11,11 +11,11 @@ proxies:
     server: 192.168.1.105
     port: 8080
 
-      -
+  -
     name: '🚉 GoogleOneVpnSocksS'
-    type: http
+    type: socks5
     server: 192.168.1.110
-    port: 8080
+    port: 1080
 
   -
     name: '🛞 GoogleOneVpnHttpS'
