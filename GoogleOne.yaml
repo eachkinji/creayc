@@ -3,23 +3,12 @@ proxies:
   -
     name: '🚴 GoogleOneVpnSocks'
     type: socks5
-    server: 192.168.1.101
+    server: 192.168.1.100
     port: 1080
   -
     name: '🚲 GoogleOneVpnHttp'
     type: http
-    server: 192.168.1.101
+    server: 192.168.1.100
     port: 8080
 
-  -
-    name: '🚉 GoogleOneVpnSocksS'
-    type: socks5
-    server: 192.168.1.110
-    port: 1080
-
-  -
-    name: '🛞 GoogleOneVpnHttpS'
-    type: http
-    server: 192.168.1.110
-    port: 8080
 
