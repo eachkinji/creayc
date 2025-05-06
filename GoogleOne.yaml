@@ -12,9 +12,9 @@ proxies:
     port: 8080
   -
     name: '🤣 GoogleOneVpnHttpO'
-    type: http
+    type: socks5
     server: 10.1.1.89
-    port: 8080
+    port: 1080
   -
     name: '🤦‍♀️ GoogleOneVpnHttpO'
     type: http
