@@ -10,3 +10,13 @@ proxies:
     type: http
     server: 10.1.1.89
     port: 8080
+  -
+    name: '🤣 GoogleOneVpnSocksCom2'
+    type: socks5
+    server: 10.1.2.18
+    port: 1080
+  -
+    name: '🤦‍♀️ GoogleOneVpnHttpCom2'
+    type: http
+    server: 10.1.2.18
+    port: 8080
