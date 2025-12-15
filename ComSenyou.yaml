@@ -3,19 +3,20 @@ allow-lan: false
 mode: Rule
 log-level: silent
 external-controller: 127.0.0.1:60000
-# ComSenyou订阅2025.5.6更新
-# 节点配置文件统一存放在 ./providers/proxy/ 目录中
-    
-proxy-providers:
-  GoogleOneCom:
+
+# 1. 在这里直接粘贴 GoogleOneCom.yaml 里的节点信息
+proxies:
+  - name: '🤣 GoogleOneVpnSocksCom'
+    type: socks5
+    server: 10.1.0.54
+    port: 1080
+  - name: '🤦‍♀️ GoogleOneVpnHttpCom'
     type: http
-    path: ./providers/proxy/GoogleOneCom.yaml
-    url: "https://raw.githubusercontent.com/eachkinji/creayc/refs/heads/main/GoogleOneCom.yaml"
-    interval: 86400
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 300
+    server: 10.1.0.54
+    port: 8080
+
+# 2. 原来的 proxy-providers 部分已删除
+
 proxy-groups:
   - name: "🔰 节点选择"
     type: select
@@ -28,8 +29,10 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 3600
-    use:
-    - GoogleOneCom
+    # 3. 这里必须改动：不能用 use，要改为 proxies 并填入上面节点的 name
+    proxies:
+      - '🤣 GoogleOneVpnSocksCom'
+      - '🤦‍♀️ GoogleOneVpnHttpCom'
 
   - name: "🐟 漏网之鱼"
     type: select
@@ -39,6 +42,8 @@ proxy-groups:
       - "🔰 节点选择"
       - "🎯 全球直连"
       - "🛑 全球拦截"
+  
+  # ... (以下其他策略组保持不变，不需要修改) ...
   - name: "😡 定位追踪"
     type: select
     url: http://www.gstatic.com/generate_204
