@@ -6,265 +6,264 @@ external-controller: 127.0.0.1:60000
 
 # 1. 在这里直接粘贴 GoogleOneCom.yaml 里的节点信息
 proxies:
-  - name: '🤣 GoogleOneVpnSocksCom'
-    type: socks5
-    server: 10.1.0.54
-    port: 1080
-  - name: '🤦‍♀️ GoogleOneVpnHttpCom'
-    type: http
-    server: 10.1.0.54
-    port: 8080
+- name: '🤣 GoogleOneVpnSocksCom'
+  type: socks5
+  server: 10.1.0.55
+  port: 1080
+- name: '🤦‍♀️ GoogleOneVpnHttpCom'
+  type: http
+  server: 10.1.0.55
+  port: 8080
 
 # 2. 原来的 proxy-providers 部分已删除
 
 proxy-groups:
-  - name: "🔰 节点选择"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - 🚲 GoogleOneCom
+- name: "🔰 节点选择"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - 🚲 GoogleOneCom
 
-  - name: "🚲 GoogleOneCom"
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
+- name: "🚲 GoogleOneCom"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
     # 3. 这里必须改动：不能用 use，要改为 proxies 并填入上面节点的 name
-    proxies:
-      - '🤣 GoogleOneVpnSocksCom'
-      - '🤦‍♀️ GoogleOneVpnHttpCom'
+  proxies:
+  - '🤣 GoogleOneVpnSocksCom'
+  - '🤦‍♀️ GoogleOneVpnHttpCom'
 
-  - name: "🐟 漏网之鱼"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🔰 节点选择"
-      - "🎯 全球直连"
-      - "🛑 全球拦截"
-  
+- name: "🐟 漏网之鱼"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🔰 节点选择"
+  - "🎯 全球直连"
+  - "🛑 全球拦截"
+
   # ... (以下其他策略组保持不变，不需要修改) ...
-  - name: "😡 定位追踪"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🔰 节点选择"
-      - "🎯 全球直连"
-      - "🛑 全球拦截"
+- name: "😡 定位追踪"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🔰 节点选择"
+  - "🎯 全球直连"
+  - "🛑 全球拦截"
 
-  - name: "🔊 苹果广播"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🔰 节点选择"
-      - "🎯 全球直连"
-      - "🛑 全球拦截"
-      
-  - name: "🍎 苹果服务"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🎯 全球直连"
-      - "🔰 节点选择"
-      - "🛑 全球拦截"
-  - name: "⬇️ 下载"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🎯 全球直连"
-      - "🔰 节点选择"
-      - "🛑 全球拦截"
-  - name: "🧱 全球代理"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🔰 节点选择"
-      - "🎯 全球直连"
-      - "🛑 全球拦截"
-  - name: "🌍 国外媒体"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🔰 节点选择"
-      - "🎯 全球直连"
-      - "🛑 全球拦截"
-  - name: "🤐 国内媒体"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🎯 全球直连"
-      - "🔰 节点选择"
-      - "🛑 全球拦截"
-  - name: "💩 国内网络"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🎯 全球直连"
-      - "🔰 节点选择"
-      - "🛑 全球拦截"
-  - name: "🤓 国内外学术"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🎯 全球直连"
-      - "🔰 节点选择"
-      - "🛑 全球拦截"
-  - name: "💰 PayPal"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🔰 节点选择"
-      - "🎯 全球直连"
-      - "🛑 全球拦截"
-  - name: "🎵 Spotify"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🎯 全球直连"
-      - "🔰 节点选择"
-      - "🛑 全球拦截"
-  - name: "📲 电报信息"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🔰 节点选择"
-      - "🎯 全球直连"
-      - "🛑 全球拦截"
-  - name: "🔦 Google"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🔰 节点选择"
-      - "🎯 全球直连"
-      - "🛑 全球拦截"
-  - name: "📢 GoogleFCM"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🔰 节点选择"
-      - "🎯 全球直连"
-      - "🛑 全球拦截"
-  - name: "🐲 GoogleCN代理"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🔰 节点选择"
-      - "🎯 全球直连"
-      - "🛑 全球拦截"
-  - name: "🪂 GoogleCN"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🎯 全球直连"
-      - "🔰 节点选择"
-      - "🛑 全球拦截"
-  - name: 👊 Copilot
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🔰 节点选择"
-      - "🎯 全球直连"
-      - "🛑 全球拦截"
-  - name: ☁️ OneDrive
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🎯 全球直连"
-      - "🔰 节点选择"
-      - "🛑 全球拦截"
-  - name: Ⓜ️ 微软服务
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🎯 全球直连"
-      - "🔰 节点选择"
-      - "🛑 全球拦截"  
-  - name: "🎥 Netflix"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🔰 节点选择"
-      - "🎯 全球直连"
-      - "🛑 全球拦截"
-  - name: "🎞️ Youtube"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🔰 节点选择"
-      - "🎯 全球直连"
-      - "🛑 全球拦截"
-  - name: "📺 巴哈姆特"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🔰 节点选择"
-      - "🛑 全球拦截"
-  - name: "🐉 张小龙的🐎"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🎯 全球直连"
-      - "🔰 节点选择"
-      - "🛑 全球拦截"
-  - name: "🏊 bilibili港澳台"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🎯 全球直连"
-      - "🔰 节点选择"
-      - "🛑 全球拦截"
-  - name: "🅱️ bilibili"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🎯 全球直连"
-      - "🔰 节点选择"
-      - "🛑 全球拦截"
-  - name: "🤖 OpenAi"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - "🔰 节点选择"
-      - "🛑 全球拦截"
-  - name: "🛑 全球拦截"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - REJECT
-      - "🎯 全球直连"
-  - name: "🎯 全球直连"
-    type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 3600
-    proxies:
-      - DIRECT
+- name: "🔊 苹果广播"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🔰 节点选择"
+  - "🎯 全球直连"
+  - "🛑 全球拦截"
+- name: "🍎 苹果服务"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🎯 全球直连"
+  - "🔰 节点选择"
+  - "🛑 全球拦截"
+- name: "⬇️ 下载"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🎯 全球直连"
+  - "🔰 节点选择"
+  - "🛑 全球拦截"
+- name: "🧱 全球代理"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🔰 节点选择"
+  - "🎯 全球直连"
+  - "🛑 全球拦截"
+- name: "🌍 国外媒体"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🔰 节点选择"
+  - "🎯 全球直连"
+  - "🛑 全球拦截"
+- name: "🤐 国内媒体"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🎯 全球直连"
+  - "🔰 节点选择"
+  - "🛑 全球拦截"
+- name: "💩 国内网络"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🎯 全球直连"
+  - "🔰 节点选择"
+  - "🛑 全球拦截"
+- name: "🤓 国内外学术"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🎯 全球直连"
+  - "🔰 节点选择"
+  - "🛑 全球拦截"
+- name: "💰 PayPal"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🔰 节点选择"
+  - "🎯 全球直连"
+  - "🛑 全球拦截"
+- name: "🎵 Spotify"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🎯 全球直连"
+  - "🔰 节点选择"
+  - "🛑 全球拦截"
+- name: "📲 电报信息"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🔰 节点选择"
+  - "🎯 全球直连"
+  - "🛑 全球拦截"
+- name: "🔦 Google"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🔰 节点选择"
+  - "🎯 全球直连"
+  - "🛑 全球拦截"
+- name: "📢 GoogleFCM"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🔰 节点选择"
+  - "🎯 全球直连"
+  - "🛑 全球拦截"
+- name: "🐲 GoogleCN代理"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🔰 节点选择"
+  - "🎯 全球直连"
+  - "🛑 全球拦截"
+- name: "🪂 GoogleCN"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🎯 全球直连"
+  - "🔰 节点选择"
+  - "🛑 全球拦截"
+- name: 👊 Copilot
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🔰 节点选择"
+  - "🎯 全球直连"
+  - "🛑 全球拦截"
+- name: ☁️ OneDrive
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🎯 全球直连"
+  - "🔰 节点选择"
+  - "🛑 全球拦截"
+- name: Ⓜ️ 微软服务
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🎯 全球直连"
+  - "🔰 节点选择"
+  - "🛑 全球拦截"
+- name: "🎥 Netflix"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🔰 节点选择"
+  - "🎯 全球直连"
+  - "🛑 全球拦截"
+- name: "🎞️ Youtube"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🔰 节点选择"
+  - "🎯 全球直连"
+  - "🛑 全球拦截"
+- name: "📺 巴哈姆特"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🔰 节点选择"
+  - "🛑 全球拦截"
+- name: "🐉 张小龙的🐎"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🎯 全球直连"
+  - "🔰 节点选择"
+  - "🛑 全球拦截"
+- name: "🏊 bilibili港澳台"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🎯 全球直连"
+  - "🔰 节点选择"
+  - "🛑 全球拦截"
+- name: "🅱️ bilibili"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🎯 全球直连"
+  - "🔰 节点选择"
+  - "🛑 全球拦截"
+- name: "🤖 OpenAi"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - "🔰 节点选择"
+  - "🛑 全球拦截"
+- name: "🛑 全球拦截"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - REJECT
+  - "🎯 全球直连"
+- name: "🎯 全球直连"
+  type: select
+  url: http://www.gstatic.com/generate_204
+  interval: 3600
+  proxies:
+  - DIRECT
 
 rule-providers:
   Anti-AD:
@@ -462,7 +461,7 @@ rule-providers:
   PayPal:
     type: http
     behavior: classical
-    url:  "https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/PayPal.yaml"
+    url: "https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/PayPal.yaml"
     path: ./providers/rule/PayPal.yaml
     interval: 86400
   Wechat:
@@ -508,47 +507,47 @@ rule-providers:
     path: ./providers/rule/ProxyLite.yaml
     interval: 86400
 
-    
+
 rules:
-  - "RULE-SET,LocalAreaNetwork,🎯 全球直连"
-  - DOMAIN,clash.razord.top,DIRECT
-  - DOMAIN,yacd.haishan.me,DIRECT
-  - "RULE-SET,FuckLocationTrack,😡 定位追踪,no-resolve"
-  - "RULE-SET,Anti-AD,🛑 全球拦截"
-  - "RULE-SET,BanAD,🛑 全球拦截"
-  - "RULE-SET,BanEasyList,🛑 全球拦截"
-  - "RULE-SET,BanEasyListChina,🛑 全球拦截"
-  - "RULE-SET,BanEasyPrivacy,🛑 全球拦截"
-  - "RULE-SET,BanProgramAD,🛑 全球拦截"
-  - "RULE-SET,Download,⬇️ 下载"
-  - "RULE-SET,GameDownload,⬇️ 下载"
-  - "RULE-SET,OpenAi,🤖 OpenAi"
-  - "RULE-SET,Scholar,🤓 国内外学术"
-  - "RULE-SET,PayPal,💰 PayPal"
-  - "RULE-SET,Bahamut,📺 巴哈姆特"
-  - "RULE-SET,Spotify,🎵 Spotify"
-  - "RULE-SET,Netflix,🎥 Netflix"
-  - "RULE-SET,Youtube,🎞️ Youtube"
-  - "RULE-SET,Google,🔦 Google"
-  - "RULE-SET,GoogleFCM,📢 GoogleFCM"
-  - "RULE-SET,GoogleCNProxy,🐲 GoogleCN代理"
-  - "RULE-SET,GoogleCN,🪂 GoogleCN"
-  - "RULE-SET,Telegram,📲 电报信息"
-  - "RULE-SET,Copilot,👊 Copilot" 
-  - "RULE-SET,OneDrive,☁️ OneDrive"
-  - "RULE-SET,Microsoft,Ⓜ️ 微软服务"
-  - "RULE-SET,Apple,🍎 苹果服务"
-  - "RULE-SET,Wechat,🐉 张小龙的🐎"
-  - "RULE-SET,BilibiliHMT,🏊 bilibili港澳台"
-  - "RULE-SET,Bilibili,🅱️ bilibili"
-  - "RULE-SET,ProxyMedia,🌍 国外媒体"
-  - "RULE-SET,ProxyGFWlist,🧱 全球代理"
-  - "RULE-SET,ProxyLite,🧱 全球代理"
-  - "RULE-SET,ChinaMedia,🤐 国内媒体"
-  - "RULE-SET,ChinaNet,💩 国内网络"
-  - "RULE-SET,ChinaDNS,💩 国内网络"
-  - "RULE-SET,ChinaDomain,💩 国内网络"
-  - "RULE-SET,ChinaCompanyIp,💩 国内网络,no-resolve"
-  - "RULE-SET,ChinaIp,💩 国内网络,no-resolve"
-  - "RULE-SET,ChinaIpV6,💩 国内网络,no-resolve"
-  - "MATCH,🐟 漏网之鱼"
+- "RULE-SET,LocalAreaNetwork,🎯 全球直连"
+- DOMAIN,clash.razord.top,DIRECT
+- DOMAIN,yacd.haishan.me,DIRECT
+- "RULE-SET,FuckLocationTrack,😡 定位追踪,no-resolve"
+- "RULE-SET,Anti-AD,🛑 全球拦截"
+- "RULE-SET,BanAD,🛑 全球拦截"
+- "RULE-SET,BanEasyList,🛑 全球拦截"
+- "RULE-SET,BanEasyListChina,🛑 全球拦截"
+- "RULE-SET,BanEasyPrivacy,🛑 全球拦截"
+- "RULE-SET,BanProgramAD,🛑 全球拦截"
+- "RULE-SET,Download,⬇️ 下载"
+- "RULE-SET,GameDownload,⬇️ 下载"
+- "RULE-SET,OpenAi,🤖 OpenAi"
+- "RULE-SET,Scholar,🤓 国内外学术"
+- "RULE-SET,PayPal,💰 PayPal"
+- "RULE-SET,Bahamut,📺 巴哈姆特"
+- "RULE-SET,Spotify,🎵 Spotify"
+- "RULE-SET,Netflix,🎥 Netflix"
+- "RULE-SET,Youtube,🎞️ Youtube"
+- "RULE-SET,Google,🔦 Google"
+- "RULE-SET,GoogleFCM,📢 GoogleFCM"
+- "RULE-SET,GoogleCNProxy,🐲 GoogleCN代理"
+- "RULE-SET,GoogleCN,🪂 GoogleCN"
+- "RULE-SET,Telegram,📲 电报信息"
+- "RULE-SET,Copilot,👊 Copilot"
+- "RULE-SET,OneDrive,☁️ OneDrive"
+- "RULE-SET,Microsoft,Ⓜ️ 微软服务"
+- "RULE-SET,Apple,🍎 苹果服务"
+- "RULE-SET,Wechat,🐉 张小龙的🐎"
+- "RULE-SET,BilibiliHMT,🏊 bilibili港澳台"
+- "RULE-SET,Bilibili,🅱️ bilibili"
+- "RULE-SET,ProxyMedia,🌍 国外媒体"
+- "RULE-SET,ProxyGFWlist,🧱 全球代理"
+- "RULE-SET,ProxyLite,🧱 全球代理"
+- "RULE-SET,ChinaMedia,🤐 国内媒体"
+- "RULE-SET,ChinaNet,💩 国内网络"
+- "RULE-SET,ChinaDNS,💩 国内网络"
+- "RULE-SET,ChinaDomain,💩 国内网络"
+- "RULE-SET,ChinaCompanyIp,💩 国内网络,no-resolve"
+- "RULE-SET,ChinaIp,💩 国内网络,no-resolve"
+- "RULE-SET,ChinaIpV6,💩 国内网络,no-resolve"
+- "MATCH,🐟 漏网之鱼"
