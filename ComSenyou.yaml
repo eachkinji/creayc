@@ -8,11 +8,11 @@ external-controller: 127.0.0.1:60000
 proxies:
 - name: '🤣 GoogleOneVpnSocksCom'
   type: socks5
-  server: 10.1.0.57
+  server: 10.1.0.58
   port: 1080
 - name: '🤦‍♀️ GoogleOneVpnHttpCom'
   type: http
-  server: 10.1.0.57
+  server: 10.1.0.58
   port: 8080
 
 # 2. 原来的 proxy-providers 部分已删除
